@@ -75,7 +75,7 @@ function getForecastData(city) {
 
 function displayForecast(data) {
     forecastDetails.innerHTML = '';
-    for (let i = 0; i < data.list.length; i += 8) {  // 8 timestamps per day
+    for (let i = 0; i < data.list.length; i += 8) {  
         const forecast = data.list[i];
         const forecastElement = document.createElement('div');
         forecastElement.classList.add('forecast-item');

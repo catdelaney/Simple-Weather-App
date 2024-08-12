@@ -8,28 +8,38 @@
     <link rel="stylesheet" href="./assets/script.js">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-light justify-content-center">
+    <header style="background: linear-gradient(135deg, #FFEB3B, #FFC107); padding: 20px">
+        <nav class="navbar navbar-light justify-content-center">
             <h1>What's the Weather</h1>
         </nav>
     </header>
-
-    <main>
+    <main class="mt-4">
         <div class="container">
-            <form id="search-form" class="mb-3">
-                <label for="city-input" class="form-label"><h4>City Name:</h4></label>
-                <input type="text" id="city-input" class="form-control mb-2" placeholder="Enter City Name Here">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </form>
-
-            <h4>Search History</h4>
-            <div id="search-history" class="list-group mb-3"></div>
-
-            <h4>Current Weather</h4>
-            <div id="current-weather" class="mb-3"></div>
-              
-            <h4>5-Day Forecast</h4>
-            <div id="forecast-details"></div>
+            <div class="row">
+                <div class="col-md-3 padding:20px">
+                    <form id="search-form" class="mb-3">
+                        <label for="city-input" class="form-label"><h4>City Name:</h4></label>
+                        <input type="text" id="city-input" class="form-control mb-2" placeholder="Enter City Name Here">
+                        <button type="submit" class="btn btn-light border-black">Search</button>
+                    </form>
+                    <h4>Search History</h4>
+                    <div id="search-history" class="list-group mb-3"></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title">Current Weather</h4>
+                            <div id="current-weather" class="mb-3"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">5-Day Forecast</h4>
+                            <div id="forecast-details" class="d-flex flex-nowrap overflow-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <script src="./assets/script.js"></script>

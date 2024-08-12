@@ -50,7 +50,21 @@ function addToSearchHistory(city) {
     button.classList.add('list-group-item', 'list-group-item-action');
     button.addEventListener('click', () => getWeather(city));
     searchHistory.appendChild(button);
-}
+    
+    let history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    if (!history.includes(city)) {
+        history.push(city);
+        localStorage.setItem('searchHistory', JSON.stringify(history));
+     }
+ }
+ 
+ function loadSearchHistory() {
+     const history = JSON.parse(localStorage.getItem('searchHistory')) || [];
+     history.forEach(city => addToSearchHistory(city));
+ }
+ 
+ document.addEventListener('DOMContentLoaded', loadSearchHistory);
+
 
 function getForecastData(city) {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`)
